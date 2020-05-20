@@ -15,8 +15,8 @@ export default function ContactForm(props) {
           method='POST'
           name='contact'
           className={styles.form}
-          data-netlify='true'
-          netlify-honeypot='bot-field'
+          // data-netlify='true'
+          // netlify-honeypot='bot-field'
           action={`mailto:${actionUrl}`}
         >
           <div hidden aria-hidden='true'>
