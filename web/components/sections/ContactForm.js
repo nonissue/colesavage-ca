@@ -12,21 +12,31 @@ export default function ContactForm(props) {
         <p className={styles.subtitle}>{subtitle}</p>
         {/* {actionUrl && ( */}
         <form
-          method='POST'
+          method='GET'
           name='contact'
           className={styles.form}
+          encType='multipart/form-data'
           // data-netlify='true'
           // netlify-honeypot='bot-field'
           action={`mailto:${actionUrl}`}
         >
-          <div hidden aria-hidden='true'>
+          {/* <div hidden aria-hidden='true'>
             <label>
               Don’t fill this out if you're human:
               <input name='bot-field' />
             </label>
-          </div>
-
+          </div> */}
           <label>
+            Subject
+            <input name='subject' type='text' />
+          </label>
+          <br />
+          <label>
+            Message
+            <textarea name='body' />
+          </label>
+          <br />
+          {/* <label>
             Your Email
             <input type='email' name='email' />
           </label>
@@ -37,7 +47,7 @@ export default function ContactForm(props) {
           <label>
             Message
             <input type='text' name='message' />
-          </label>
+          </label> */}
           <button type='submit'>Send</button>
         </form>
         {/* )} */}
