@@ -7,6 +7,7 @@
   display: flex;
   margin: 0 auto;
   max-width: var(--width-small);
+  
 }
 
 .root a {
@@ -35,6 +36,8 @@
     width: auto;
     color: inherit;
     vertical-align: top;
+    width: 192px;
+    height: 72px;
   }
 
   @nest & svg path {
@@ -95,7 +98,7 @@
   @nest & > a {
     display: block;
     position: relative;
-    padding: 1.5rem 0.5rem;
+    padding: 2.5rem 0.5rem;
 
     @media (--media-max-medium) {
       padding: 1rem 1.5rem;
@@ -142,6 +145,8 @@
 .hamburgerIcon {
   font-size: calc(var(--font-base-line-height) * 1.5rem);
   display: block;
+  margin-top: 0.75rem;
+  border: 1px solid #eee;
 
   @media (--media-min-medium) {
     display: none;

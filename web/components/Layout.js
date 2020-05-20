@@ -6,7 +6,7 @@ import {LogoJsonLd} from 'next-seo'
 import Header from './Header'
 import Footer from './Footer'
 
-function Layout (props) {
+function Layout(props) {
   const {config, children} = props
 
   if (!config) {
@@ -23,7 +23,11 @@ function Layout (props) {
         <meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
       </Head>
       <div className='container'>
+        {/* <div style={{ border: '3px solid red'}}> */}
+        <div style={{ boxShadow: `0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)`, width: `100%` }} >
         <Header title={title} navItems={mainNavigation} logo={logo} />
+        </div>
+        {/* </div> */}
         <div className='content'>{children}</div>
         <Footer navItems={footerNavigation} text={footerText} />
         {logoUrl && url && <LogoJsonLd url={url} logo={logoUrl} />}

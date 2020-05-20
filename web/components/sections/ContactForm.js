@@ -4,17 +4,15 @@ import styles from './ContactForm.module.css'
 import * as typeformEmbed from '@typeform/embed'
 
 export default function ContactForm(props) {
-  const {heading, subtitle, actionUrl} = props
+  const {heading, subtitle} = props
   let popup1
   useEffect(() => {
     popup1 = typeformEmbed.makePopup('https://andy006405.typeform.com/to/EcURE7', {
       opacity: 55,
       mode: 'popup',
-      // autoOpen: true,
-      // autoClose: 3,
       hideFooter: true,
       hideScrollbars: true,
-      onSubmit: function () {
+      onSubmit: () => {
         console.log('Typeform successfully submitted')
       }
     })
@@ -24,31 +22,10 @@ export default function ContactForm(props) {
     <section className={styles.root}>
       <div className={styles.container}>
         <h2 className={styles.heading}>{heading}</h2>
-        {/* <p className={styles.subtitle}>{subtitle}</p>
-        <form
-          method='GET'
-          name='contact'
-          className={styles.form}
-          encType='multipart/form-data'
-          // data-netlify='true'
-          // netlify-honeypot='bot-field'
-          action={`mailto:${actionUrl}`}
-        >
-          <label>
-            Subject
-            <input name='subject' type='text' />
-          </label>
-          <br />
-          <label>
-            Message
-            <textarea name='body' />
-          </label>
-          <br />
-        
-          <button type='submit'>Send</button>
-        </form> */}
+        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+
         <form className={styles.form}>
-          <button type='button' onClick={() => popup1.open()}>
+          <button type='button' alt='Tap here to contact cole' onClick={() => popup1.open()}>
             Contact Cole
           </button>
         </form>
@@ -59,6 +36,5 @@ export default function ContactForm(props) {
 
 ContactForm.propTypes = {
   heading: PropTypes.string,
-  subtitle: PropTypes.string,
-  actionUrl: PropTypes.string
+  subtitle: PropTypes.string
 }
