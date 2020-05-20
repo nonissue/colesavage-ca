@@ -22,7 +22,7 @@ import simplePortableText from './objects/simplePortableText'
 import hero from './objects/hero'
 import imageSection from './objects/imageSection'
 import mailchimp from './objects/mailchimp'
-import contactForm from './objects/contactFrom'
+import contactForm from './objects/contactForm'
 import textSection from './objects/textSection'
 
 // Then we give our schema to the builder and provide the result to Sanity
