@@ -1,35 +1,34 @@
 export default {
   type: 'object',
-  name: 'contact-form',
-  title: 'contact form',
+  name: 'contactForm',
+  title: 'Contact Form',
   fields: [
     {
       name: 'heading',
       type: 'string',
-      title: 'Heading',
+      title: 'Heading'
     },
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subheading',
+      title: 'Subheading'
     },
     {
       name: 'actionUrl',
-      type: 'url',
+      type: 'string',
       title: 'Recipient Email',
-      description:
-        'Email address for person receiving correspondence from form',
-    },
+      description: 'Email address for person receiving correspondence from form'
+    }
   ],
   preview: {
     select: {
-      title: 'heading',
+      title: 'heading'
     },
-    prepare({ title }) {
+    prepare ({title}) {
       return {
         title,
-        subtitle: 'Contact form section',
-      };
-    },
-  },
-};
+        subtitle: 'Contact form section'
+      }
+    }
+  }
+}
