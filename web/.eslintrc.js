@@ -2,7 +2,14 @@ module.exports = {
   extends: ['standard', 'standard-react', 'plugin:import/errors', 'plugin:import/warnings'],
   rules: {
     'object-curly-spacing': ['error', 'never'],
-    'space-before-function-paren': ['error', 'never']
+    'space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'never'
+      }
+    ]
   },
   settings: {
     react: {
