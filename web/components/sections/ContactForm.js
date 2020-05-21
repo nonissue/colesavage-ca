@@ -17,7 +17,6 @@ export default function ContactForm(props) {
         console.log('Typeform successfully submitted')
       }
     })
-
     setTypeform(contactTypeform)
   }, [])
 

@@ -6,7 +6,7 @@ import client from '../client'
 
 const builder = imageUrlBuilder(client)
 
-function Figure ({node}) {
+function Figure({node}) {
   const {alt, caption, asset} = node
   if (!asset) {
     return undefined
@@ -14,11 +14,7 @@ function Figure ({node}) {
   return (
     <figure className={styles.content}>
       <img
-        src={builder
-          .image(asset)
-          .auto('format')
-          .width(2000)
-          .url()}
+        src={builder.image(asset).auto('format').width(2000).url()}
         className={styles.image}
         alt={alt}
       />

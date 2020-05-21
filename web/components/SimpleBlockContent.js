@@ -6,7 +6,7 @@ import serializers from './serializers'
 
 const {projectId, dataset} = client.config()
 
-function SimpleBlockContent (props) {
+function SimpleBlockContent(props) {
   const {blocks} = props
 
   if (!blocks) {
@@ -14,7 +14,14 @@ function SimpleBlockContent (props) {
     return null
   }
 
-  return <BlockContent blocks={blocks} serializers={serializers} projectId={projectId} dataset={dataset} />
+  return (
+    <BlockContent
+      blocks={blocks}
+      serializers={serializers}
+      projectId={projectId}
+      dataset={dataset}
+    />
+  )
 }
 
 SimpleBlockContent.propTypes = {
