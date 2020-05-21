@@ -41,7 +41,7 @@ module.exports = withCSS({
     localIdentName: isProduction ? '[hash:base64:5]' : '[name]__[local]___[hash:base64:5]'
   },
   exportPathMap: function () {
-    return client.fetch(query).then(res => {
+    return client.fetch(query).then((res) => {
       const {routes = []} = res
       const nextRoutes = {
         // Routes imported from sanity
