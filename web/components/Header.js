@@ -34,12 +34,12 @@ class Header extends Component {
     })
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const {router} = this.props
     router.events.on('routeChangeComplete', this.hideMenu)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     const {router} = this.props
     router.events.off('routeChangeComplete', this.hideMenu)
   }
@@ -55,7 +55,7 @@ class Header extends Component {
     })
   }
 
-  renderLogo = logo => {
+  renderLogo = (logo) => {
     if (!logo || !logo.asset) {
       return null
     }
@@ -67,7 +67,7 @@ class Header extends Component {
     return <img src={logo.asset.url} alt={logo.title} className={styles.logo} />
   }
 
-  render () {
+  render() {
     const {title = 'Missing title', navItems, router, logo} = this.props
     const {showNav} = this.state
 
@@ -82,7 +82,6 @@ class Header extends Component {
               }
             }}
             as='/'
-            prefetch
           >
             <a title={title}>{this.renderLogo(logo)}</a>
           </Link>
@@ -90,7 +89,7 @@ class Header extends Component {
         <nav className={styles.nav}>
           <ul className={styles.navItems}>
             {navItems &&
-              navItems.map(item => {
+              navItems.map((item) => {
                 const {slug, title, _id} = item
                 const isActive =
                   router.pathname === '/LandingPage' && router.query.slug === slug.current
@@ -102,7 +101,6 @@ class Header extends Component {
                         query: {slug: slug.current}
                       }}
                       as={`/${slug.current}`}
-                      prefetch
                     >
                       <a data-is-active={isActive ? 'true' : 'false'}>{title}</a>
                     </Link>

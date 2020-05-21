@@ -14,8 +14,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@babel/runtime-corejs2": "^7.9.6",
     "@sanity/cli": "^1.149.13",
-    "lerna": "^3.9.0"
+    "lerna": "^3.21.0"
   },
   "dependencies": {
     "@typeform/embed": "^0.17.0"
