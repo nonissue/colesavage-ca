@@ -18,7 +18,5 @@
     "@sanity/cli": "^1.149.13",
     "lerna": "^3.21.0"
   },
-  "dependencies": {
-    "@typeform/embed": "^0.17.0"
-  }
+  "dependencies": {}
 }
